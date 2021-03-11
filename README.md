@@ -1,4 +1,4 @@
-[![msbuild](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml/badge.svg)](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml)
+[![msbuild](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml/badge.svg?branch=main)](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml)
 
 # NukeeperUI
 
