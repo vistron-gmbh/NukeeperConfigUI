@@ -48,6 +48,7 @@
                     HorizontalAlignment="Left"
                     DisplayMemberPath="Name"
                     ItemsSource="{Binding SourceItem.AvailableValues, Mode=OneWay}"
+                    SelectedIndex="0"
                     SelectedValue="{Binding SourceItem.Value, Mode=OneWayToSource}" />
             </StackPanel>
             <StackPanel Width="200">

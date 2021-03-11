@@ -13,12 +13,12 @@ using System.Windows.Input;
 namespace NukeeperConfigUI.ViewModels
 {
     /// <summary>
-    /// Allows the user to to set a nukeeper config through the UI.
+    /// Allows the user to set a nukeeper config through the UI.
     /// </summary>
     public class NugetUpdateConfigViewModel :BindableBase, IDialogAware
     {
         /// <summary>
-        /// The prism dialog identifies this dialog using this key.
+        /// The prism dialog identifies this dialogs parameter using this key.
         /// </summary>
         public const string PARAMETER_KEY_CONFIG = "NukeeperConfig";
 
@@ -52,6 +52,7 @@ namespace NukeeperConfigUI.ViewModels
             Change[] changeValues = Enum.GetValues(typeof(Change)) as Change[];
             Prerelease[] preReleaseValues = Enum.GetValues(typeof(Prerelease)) as Prerelease[];
             IList<NugetSource> availableNugetSources = NukeeperHelper.GetNugetSourcesOfMachine();
+            availableNugetSources.Insert(0, (new NugetSource() { Name = "Any", Target = null })); //We need to add the possibilty to revert back to no selection
 
             ChangeItem = new ConfigItem<Change>(changeValues, (c) => NukeeperConfig.Change = c);
             PrereleaseItem = new ConfigItem<Prerelease>(preReleaseValues, (c) => NukeeperConfig.UsePreRelease = c);
