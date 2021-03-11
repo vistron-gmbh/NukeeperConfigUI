@@ -1,0 +1,20 @@
+
+name: msbuild
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: MSBuild
+      run: msbuild src/NukeeperUI/NukeeperConfigUI.csproj /verbosity:minimal /p:Configuration="Release" /p:Platform="Any CPU" /t:restore

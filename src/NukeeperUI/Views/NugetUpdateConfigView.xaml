@@ -1,0 +1,90 @@
+﻿<UserControl
+    x:Class="NukeeperConfigUI.NugetUpdateConfigView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:NukeeperConfigUI"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:vm="clr-namespace:NukeeperConfigUI.ViewModels"
+    MinWidth="400"
+    d:DataContext="{d:DesignInstance vm:NugetUpdateConfigViewModel,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="350"
+    d:DesignWidth="500"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="20" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <UniformGrid Grid.Row="1" Margin="20">
+
+            <StackPanel>
+                <TextBlock>Change Policy</TextBlock>
+                <ComboBox
+                    Width="200"
+                    HorizontalAlignment="Left"
+                    ItemsSource="{Binding ChangeItem.AvailableValues, Mode=OneWay}"
+                    SelectedIndex="1"
+                    SelectedValue="{Binding ChangeItem.Value, Mode=OneWayToSource}" />
+            </StackPanel>
+            <StackPanel Width="200">
+                <TextBlock>Update these Sources Only</TextBlock>
+                <ComboBox
+                    Width="200"
+                    HorizontalAlignment="Left"
+                    DisplayMemberPath="Name"
+                    ItemsSource="{Binding SourceItem.AvailableValues, Mode=OneWay}"
+                    SelectedValue="{Binding SourceItem.Value, Mode=OneWayToSource}" />
+            </StackPanel>
+            <StackPanel Width="200">
+                <TextBlock>Prerelease Policy</TextBlock>
+                <ComboBox
+                    Width="200"
+                    HorizontalAlignment="Left"
+                    ItemsSource="{Binding PrereleaseItem.AvailableValues, Mode=OneWay}"
+                    SelectedIndex="2"
+                    SelectedValue="{Binding PrereleaseItem.Value, Mode=OneWayToSource}" />
+            </StackPanel>
+        </UniformGrid>
+
+
+        <DockPanel Grid.Row="2">
+
+
+            <Button
+                Width="100"
+                Height="50"
+                Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.Cancel}"
+                Content="Cancel" />
+            <Button
+                Width="100"
+                Height="50"
+                Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Command="{Binding CloseCommand}"
+                CommandParameter="{x:Static prism:ButtonResult.OK}"
+                Content="Okay" />
+        </DockPanel>
+
+    </Grid>
+
+</UserControl>
