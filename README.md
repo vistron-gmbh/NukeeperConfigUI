@@ -1,6 +1,6 @@
-# NukeeperUI
+# NukeeperConfigUI
 
-*A simple WPF UI to enable the user to build a config item which can be used to call the nukeeper.exe to update a project.*
+*A simple WPF UI to enable the user to build a config item which can be used to call [nukeeper](https://github.com/NuKeeperDotNet/NuKeeper) to update a project.*
 
 ## Usage
 
