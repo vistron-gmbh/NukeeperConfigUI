@@ -1,3 +1,5 @@
+[![msbuild](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml/badge.svg?branch=main)](https://github.com/vistron-gmbh/NukeeperConfigUI/actions/workflows/msbuild.yml)
+
 # NukeeperConfigUI
 
 *A simple WPF UI to enable the user to build a config item which can be used to call [nukeeper](https://github.com/NuKeeperDotNet/NuKeeper) to update a project.*
