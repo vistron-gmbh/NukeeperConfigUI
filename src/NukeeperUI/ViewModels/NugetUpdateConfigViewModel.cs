@@ -50,7 +50,7 @@ namespace NukeeperConfigUI.ViewModels
             CloseCommand = new DelegateCommand<ButtonResult?>(CloseAction);
 
             Change[] changeValues = Enum.GetValues(typeof(Change)) as Change[];
-            Prerelease[] preReleaseValues = Enum.GetValues(typeof(Prerelease)) as Prerelease[];
+            Prerelease[] preReleaseValues = Enum.GetValues(typeof(Prerelease)) as Prerelease[];        
             IList<NugetSource> availableNugetSources = NukeeperHelper.GetNugetSourcesOfMachine();
             availableNugetSources.Insert(0, (new NugetSource() { Name = "Any", Target = null })); //We need to add the possibilty to revert back to no selection
 
