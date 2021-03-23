@@ -13,9 +13,11 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
     - name: MSBuild
       run: msbuild src/NukeeperUI/NukeeperConfigUI.csproj /verbosity:minimal /p:Configuration="Release" /p:Platform="Any CPU" /t:restore
